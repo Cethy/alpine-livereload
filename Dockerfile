@@ -1,10 +1,8 @@
 FROM alpine:3.6
 
-MAINTAINER Franck Delage <franck@web82.fr>
-
 WORKDIR /usr/src/app
 
-RUN apk add --update  nodejs \
+RUN apk add --update nodejs \
     && apk add --virtual build-dependencies nodejs-npm git \
     && git clone https://github.com/napcs/node-livereload.git . \
     && npm install \
